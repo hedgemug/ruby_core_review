@@ -33,6 +33,18 @@ class Manager < Employee
     puts "Email sent!"
   end
 
+  def give_all_raises
+    @employees.each do |employee|
+      employee.give_annual_raise
+    end
+  end
+
+  def fire_all_employees
+    @employees.each do |employee|
+      employee.active = false
+    end
+  end
+
 end
 
 
@@ -41,7 +53,12 @@ employee2 = Employee.new({first_name: "Danilo", last_name: "Campos", salary: 700
 manager = Manager.new(first_name: "Stephen", last_name: "Carico", salary: 100000, active: true, employees: [employee1, employee2])
 manager.print_info
 manager.send_email_report
-
+manager.give_all_raises
+puts employee1.salary
+puts employee2.salary
+manager.fire_all_employees
+puts employee1.active
+puts employee2.active
 
 
 
