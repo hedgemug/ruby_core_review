@@ -1,11 +1,11 @@
 require "./employees.rb"
 require "./email_reportable.rb"
 
-class Intern < Employee
+module Actualize
+  class Intern < Employee
 
-  include EmailReportable
+    include EmailReportable
 
+  end
 end
-
-
 
